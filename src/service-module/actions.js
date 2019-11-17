@@ -99,7 +99,7 @@ export default function makeServiceActions (service, { debug }) {
         if (state.setCurrentOnGet) {
           commit('setCurrent', existedItem)
         }
-        if (!skipRequestIfExists) getFromRemote()
+        if (!skipRequestIfExists) return getFromRemote()
         return Promise.resolve(existedItem)
       }
       return getFromRemote()
